@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello_message">AFortune</string>
+    <string name="app_name">AFortune</string>
+    <string name="timeout_prompt">Set the fortune period</string>
+    <string name="about_prompt">About ...</string>
+    <string name="update_prompt">New Fortune</string>
+    <string name="close_prompt">Close</string>
+    <string-array name="timeout_array">
+        <item>10 seconds</item>
+        <item>30 seconds</item>
+        <item>10 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>6 hours</item>
+        <item>12 hours</item>
+        <item>1 day</item>
+    </string-array>
+	<string name="strCopyright">AFortune - Copyright (C) 2011  Goffredo Baroncelli &lt;kreijack@gmail.com&gt;</string>
+	<string name="strGplAbout">This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2 of the License, or (at your option)
+any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+more details.
+You should have received a copy of the GNU General Public License along with
+this program; if not, write to the Free Software Foundation, Inc., 51 Franklin
+Street, Fifth Floor, Boston, MA 02110-1301, USA. 
+</string>
+	<string name="select_fortune_header">Select "fortunes"</string>
+	<string name="list_config_prompt">Enable "fortunes" ...</string>    
+</resources>
