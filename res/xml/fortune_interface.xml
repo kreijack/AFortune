@@ -5,5 +5,6 @@
     android:minHeight="72dp"
     android:updatePeriodMillis="0"
     android:initialLayout="@layout/afortune_layout"
+    android:label="@string/appwidget4_1_label"
   >
 </appwidget-provider>

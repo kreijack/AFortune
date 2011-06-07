@@ -11,8 +11,20 @@ import android.widget.RemoteViews;
 
 public class AFortuneProvider extends AppWidgetProvider {
 	
-	private static final String TAG = "AFortuneProvider";
+	protected String TAG = "AFortuneProvider";
 	private String fortuneMsg = "New text";
+	protected int width, height;
+	
+	public AFortuneProvider(int w, int h){
+		super();
+		width=w;
+		height=h;
+	}
+	public AFortuneProvider(){
+		super();
+		width=4;
+		height=1;
+	}
 	
 	private void startAFortuneService(Context context){
 		Intent i = new Intent(Const.START_SERVICE);
@@ -21,14 +33,14 @@ public class AFortuneProvider extends AppWidgetProvider {
 	}
 
 	public void onEnabled(Context context){
-		Log.d(TAG,"AFortuneProvider.onEnabled");
+		Log.d(TAG,"onEnabled");
 		// start service
 		startAFortuneService(context);
 	}
 
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         final int N = appWidgetIds.length;
-        Log.d(TAG,"AFortuneProvider.onUpdate");
+        Log.d(TAG,"onUpdate");
         startAFortuneService(context);
 
         // Perform this loop procedure for each App Widget that belongs to this provider
@@ -60,10 +72,13 @@ public class AFortuneProvider extends AppWidgetProvider {
     	}
     }
 
+    protected ComponentName getComponentName(Context context){
+    	return new ComponentName(context, AFortuneProvider.class);
+    }
     private void updateAllWidgets(Context context){
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         int[] appWidgetIds = appWidgetManager.getAppWidgetIds(
-        			new ComponentName(context, AFortuneProvider.class));
+        			getComponentName(context));
         
         final int N = appWidgetIds.length;
         Log.d(TAG,"AFortuneProvider.updateAllWidgetse:"+String.valueOf(N));

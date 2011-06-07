@@ -14,14 +14,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
       </activity>    
-      <receiver android:name=".AFortuneProvider" >
+      <receiver android:name=".AFortuneProvider" android:label="@string/appwidget4_1_label">
         <intent-filter>
             <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             <action android:name="eu.kreijack.afortune.UPDATE_FORTUNE" />
         </intent-filter>
         <meta-data android:name="android.appwidget.provider"
                android:resource="@xml/fortune_interface" />
+      </receiver>      
+      <receiver android:name=".AFortuneProvider_4_2" android:label="@string/appwidget4_2_label">
+        <intent-filter>
+            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            <action android:name="eu.kreijack.afortune.UPDATE_FORTUNE" />
+        </intent-filter>
+        <meta-data android:name="android.appwidget.provider"
+               android:resource="@xml/fortune_interface_4_2" />
       </receiver>
+ 	  <receiver android:name=".AFortuneProvider_4_3" android:label="@string/appwidget4_3_label">
+        <intent-filter>
+            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            <action android:name="eu.kreijack.afortune.UPDATE_FORTUNE" />
+        </intent-filter>
+        <meta-data android:name="android.appwidget.provider"
+               android:resource="@xml/fortune_interface_4_3" />
+      </receiver>            
+ 	  <receiver android:name=".AFortuneProvider_4_4" android:label="@string/appwidget4_4_label">
+        <intent-filter>
+            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            <action android:name="eu.kreijack.afortune.UPDATE_FORTUNE" />
+        </intent-filter>
+        <meta-data android:name="android.appwidget.provider"
+               android:resource="@xml/fortune_interface_4_4" />
+      </receiver>            
       <service android:name="AFortuneService" android:label="AFortuneService"></service>
       <activity android:name=".AboutActivity"
                   android:label="@string/app_name">

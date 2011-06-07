@@ -83,7 +83,7 @@ public class AFortuneConfigure extends Activity {
         
         int i;
         for( i = 0 ; i < timeouts.length; i++)
-        	if(t >= timeouts[i]){
+        	if(t <= timeouts[i]){
         		spTimeout.setSelection(i);
         		break;
         	}

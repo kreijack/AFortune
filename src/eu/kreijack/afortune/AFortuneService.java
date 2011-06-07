@@ -3,7 +3,6 @@ package eu.kreijack.afortune;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.appwidget.AppWidgetManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -84,8 +83,8 @@ public class AFortuneService extends Service {
 		Intent i = new Intent(Const.UPDATE_FORTUNE);
 		i.putExtra("msg", aFortuneDB.getRandomFortune());
 		sendBroadcast(i);
-		i = new Intent(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
-		sendBroadcast(i);
+		//i = new Intent(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+		//sendBroadcast(i);
 	}
 	private void loadTimeout(){
         timeout = settings.getInt("Timeout",60*60*1000);		

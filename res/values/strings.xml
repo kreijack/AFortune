@@ -6,6 +6,10 @@
     <string name="about_prompt">About ...</string>
     <string name="update_prompt">New Fortune</string>
     <string name="close_prompt">Close</string>
+    <string name="appwidget4_1_label">AFortune App Widget</string>
+    <string name="appwidget4_2_label">AFortune App Widget 4x2</string>
+    <string name="appwidget4_3_label">AFortune App Widget 4x3</string>
+    <string name="appwidget4_4_label">AFortune App Widget 4x4</string>
     <string-array name="timeout_array">
         <item>10 seconds</item>
         <item>30 seconds</item>
