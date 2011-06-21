@@ -20,7 +20,20 @@
         <item>12 hours</item>
         <item>1 day</item>
     </string-array>
-     <string-array name="transparent_array">
+    <string-array name="color_array">
+		<item>Black</item>
+		<item>Blue</item>
+		<item>Cyan</item>
+		<item>Dark gray</item>
+		<item>Gray</item>
+		<item>Green</item>
+		<item>Light gray</item>
+		<item>Magenta</item>
+		<item>Red</item>
+		<item>White</item>
+		<item>Yellow</item>
+    </string-array>
+    <string-array name="transparent_array">
         <item>0%</item>
         <item>20%</item>
         <item>40%</item>
@@ -28,7 +41,7 @@
         <item>80%</item>
         <item>100%</item>
     </string-array>
-     <string-array name="textsize_array">
+    <string-array name="textsize_array">
         <item>70%</item>
         <item>85%</item>
         <item>100%</item>
@@ -50,6 +63,13 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA.
 </string>
 	<string name="select_fortune_header">Select "fortunes"</string>
 	<string name="list_config_prompt">Enable "fortunes" ...</string>
-	<string name="transparent_prompt">Opacity %</string>    
-	<string name="textsize_prompt">Text size</string>          
+	<string name="transparent_prompt">Background opacity %</string>    
+	<string name="textsize_prompt">Text size</string>    
+	<string name="bgColor_prompt">Background color</string>    
+	<string name="fgColor_prompt">Text color</string>    
+	<string name="btnCaptionNextFortune">Next...</string>    
+	<string name="btnCaptionShare">Email...</string>    
+	<string name="btnCopyAll">Copy</string>
+	<string name="txtSendTo">Send fortune...</string>
+	<string name="captionShareViaSMS">SMS..</string>                
 </resources>

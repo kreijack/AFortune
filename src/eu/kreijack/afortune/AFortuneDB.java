@@ -32,6 +32,7 @@ public class AFortuneDB {
 	private AssetManager 			assetManager;
 	private SharedPreferences		settings;	
 	private static AFortuneDB		aFortuneDB = null;
+	private String					lastFortune="";
 	
 	class FortuneFile {
 		public String	packageName;
@@ -230,7 +231,7 @@ public class AFortuneDB {
 		FortuneFile ff = null;
 		
 		for(int i=0 ; i < fortuneFiles.size(); i++){
-			Log.d(TAG,"fortunefiles:"+fortuneFiles.get(i).name+"; name: "+idb+";");
+			//Log.d(TAG,"fortunefiles:"+fortuneFiles.get(i).name+"; name: "+idb+";");
 			if(fortuneFiles.get(i).name.equals(idb)){
 				ff = fortuneFiles.get(i);
 				break;
@@ -279,7 +280,7 @@ public class AFortuneDB {
 		if( (k<0) || (k<j))
 			return "<NO FORTUNE>";
 		
-		return fortunes.substring(j+1, k);
+		return fortunes.substring(j+2, k);
 				
 	}
 	
@@ -290,7 +291,12 @@ public class AFortuneDB {
 		
 		Log.d(TAG,"Select from db:"+join("/",dbsname));
 		int idb = random() % dbsname.length;
-		return getRandomText(dbsname[idb]);
+		lastFortune = getRandomText(dbsname[idb]); 
+		return lastFortune;
+	}
+	
+	public String getLastFortune(){
+		return lastFortune;
 	}
 
 }

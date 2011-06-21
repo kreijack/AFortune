@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/scroll2" 
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"> 
+<LinearLayout 
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -28,20 +32,50 @@
 		android:text="@string/list_config_prompt" 
 		android:id="@+id/btEnableFortunes">
 	</Button>
-	<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/textView3" android:text="@string/transparent_prompt"></TextView>
+	<TextView android:layout_width="match_parent" 
+		android:layout_height="wrap_content" 
+		android:id="@+id/textView3" 
+		android:text="@string/textsize_prompt">
+	</TextView>
+	<Spinner android:layout_height="wrap_content" 
+		android:layout_width="match_parent" 
+		android:id="@+id/spTextSize"
+		android:prompt="@string/textsize_prompt"
+		android:entries="@array/textsize_array">
+	</Spinner>
+	<TextView android:text="@string/fgColor_prompt" 
+		android:layout_height="wrap_content" 
+		android:id="@+id/textView5" 
+		android:layout_width="wrap_content">
+	</TextView>
+	<Spinner android:layout_height="wrap_content" 
+		android:layout_width="match_parent" 
+		android:prompt="@string/fgColor_prompt"
+		android:entries="@array/color_array"		 
+		android:id="@+id/spFGColor">
+	</Spinner>	
+	<TextView android:layout_width="match_parent" 
+		android:layout_height="wrap_content" 
+		android:id="@+id/textView3" 
+		android:text="@string/transparent_prompt">
+	</TextView>
 	<Spinner android:layout_height="wrap_content" 
 		android:layout_width="match_parent" 
 		android:id="@+id/spTransparent"
 		android:prompt="@string/transparent_prompt"
 		android:entries="@array/transparent_array">
 	</Spinner>
-	<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/textView3" android:text="@string/textsize_prompt"></TextView>
+	<TextView android:text="@string/bgColor_prompt" 
+		android:layout_height="wrap_content" 
+		android:id="@+id/textView4"
+		android:layout_width="wrap_content">
+	</TextView>
 	<Spinner android:layout_height="wrap_content" 
 		android:layout_width="match_parent" 
-		android:id="@+id/spTextSize"
-		android:prompt="@string/textsize_prompt"
-		android:entries="@array/textsize_array">
-	</Spinner>	
+		android:entries="@array/color_array"
+		android:prompt="@string/bgColor_prompt" 
+		android:id="@+id/spBGColor">
+	</Spinner>
 	<TextView android:text=" " 
 		android:id="@+id/textView1" 
 		android:layout_width="match_parent" 
@@ -55,3 +89,4 @@
 		android:layout_gravity="bottom">
 	</Button>
 </LinearLayout>
+</ScrollView>

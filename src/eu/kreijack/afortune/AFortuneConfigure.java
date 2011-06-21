@@ -3,7 +3,9 @@ package eu.kreijack.afortune;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -16,6 +18,8 @@ public class AFortuneConfigure extends Activity {
 	private Spinner		spTimeout;
 	private Spinner		spTransparent;
 	private Spinner		spTextSize;
+	private Spinner		spFGColor;
+	private Spinner		spBGColor;
 	private Button		btnUpdate;
 	private Button		btnAbout;
 	private TextView	tvHello;
@@ -29,6 +33,21 @@ public class AFortuneConfigure extends Activity {
 			12*60*60*1000,
 			24*60*60*1000
 	};
+	
+	final private static int colors[] ={
+		Color.BLACK,
+		Color.BLUE,
+		Color.CYAN,
+		Color.DKGRAY,
+		Color.GRAY,
+		Color.GREEN,
+		Color.LTGRAY,
+		Color.MAGENTA,
+		Color.RED,
+		Color.WHITE,
+		Color.YELLOW
+	};
+	final private int colorDefault = 0;
 	
 	
 	final private static float fontSizes[] = { 70, 85, 100, 115, 130 };
@@ -60,6 +79,12 @@ public class AFortuneConfigure extends Activity {
 	    spTextSize = (Spinner) findViewById(R.id.spTextSize);
 	    spTextSize.setOnItemSelectedListener(myOnItemSelectedListener);
 
+	    spBGColor = (Spinner) findViewById(R.id.spBGColor);
+	    spBGColor.setOnItemSelectedListener(myOnItemSelectedListener);
+	    
+	    spFGColor = (Spinner) findViewById(R.id.spFGColor);
+	    spFGColor.setOnItemSelectedListener(myOnItemSelectedListener);
+	    
 	    spTransparent = (Spinner) findViewById(R.id.spTransparent);
 	    spTransparent.setOnItemSelectedListener(myOnItemSelectedListener);
 	    
@@ -119,6 +144,17 @@ public class AFortuneConfigure extends Activity {
         		return i;
         return transparentDefaultId;   	
     }
+    int spinner2Color(int spId){
+    	if(spId<0 || spId >= colors.length)
+    		spId = colorDefault;
+    	return colors[spId];
+    }
+    int color2Spinner(int t){
+        for(int i = 0 ; i < colors.length; i++)
+        	if(t == colors[i])
+        		return i;
+        return colorDefault;   	
+    }    
     private void loadWidgetState(){
         int t = settings.getInt("Timeout",timeouts[5]);
         
@@ -133,6 +169,8 @@ public class AFortuneConfigure extends Activity {
         
         spTextSize.setSelection(fontSize2Spinner(settings.getFloat("TextSize", -1)));
         spTransparent.setSelection(transparent2Spinner(settings.getInt("Transparent", -1)));
+        spFGColor.setSelection(color2Spinner(settings.getInt("FGColor", -1)));
+        spBGColor.setSelection(color2Spinner(settings.getInt("BGColor", -1)));
 
     }
 	private void saveWidgetState(){
@@ -141,6 +179,14 @@ public class AFortuneConfigure extends Activity {
         
     	editor.putInt("Timeout", timeouts[spTimeout.getSelectedItemPosition()]); 
     	editor.putInt("Transparent", spinner2Transparent(spTransparent.getSelectedItemPosition()));
+    	editor.putInt("FGColor", spinner2Color(spFGColor.getSelectedItemPosition()));
+    	editor.putInt("BGColor", spinner2Color(spBGColor.getSelectedItemPosition()));
+    	
+    	Log.d(TAG, String.format("FGColor=%d -> 0x%08x",
+    			spFGColor.getSelectedItemPosition(),
+    			spinner2Color(spFGColor.getSelectedItemPosition()))
+    	);
+    	
         // Commit the edits!
         editor.commit();    
         
