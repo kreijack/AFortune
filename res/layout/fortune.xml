@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent" 
+  android:orientation="vertical" android:id="@+id/linearLayout33">
+
+    <LinearLayout android:id="@+id/linearLayout1"
+    	android:orientation="horizontal"
+    	  
+    	android:layout_height="wrap_content"
+    	android:layout_width="match_parent">
+    		    <Button android:layout_weight="1"  
+			    	android:layout_height="wrap_content" 
+			    	android:layout_width="wrap_content" 
+			    	android:id="@+id/btnNext" 
+			    	android:text="@string/btnCaptionNextFortune">
+			    </Button>
+    		    <Button android:text="@string/btnCopyAll" 
+    		    	android:layout_height="wrap_content" 
+    		    	android:layout_weight="1"  
+    		    	android:id="@+id/btnCopyAll" 
+    		    	android:layout_width="wrap_content">
+    		    </Button>
+    		    <Button android:text="@string/captionShareViaSMS" 
+    		    	android:layout_height="wrap_content" 
+    		    	android:id="@+id/btnSendSMS" 
+    		    	android:layout_width="wrap_content"></Button>
+    		    <Button android:text="@string/btnCaptionShare" 
+			    	android:layout_weight="1" 
+			    	android:layout_height="wrap_content" 
+			    	android:layout_width="wrap_content" 
+			    	android:id="@+id/btnShare">
+			    </Button>
+    		
+    </LinearLayout>
+    
+	<ScrollView android:layout_width="match_parent"
+    			android:layout_height="match_parent" android:id="@+id/btnShare">
+	    <TextView android:text="TextView" 
+	    	android:id="@+id/tvFortuneText" 
+	    	android:layout_width="match_parent" 
+	    	android:layout_height="fill_parent" 
+	    	android:longClickable="true">
+	    </TextView>    			    
+	</ScrollView>  
+
+</LinearLayout>
