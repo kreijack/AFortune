@@ -88,7 +88,7 @@ public class AFortuneDB {
 			String dbs_name[] = am.list("");
 			for(int i=0 ; i < dbs_name.length ; i++){
 				
-				if( !dbs_name[i].endsWith(".txt")) continue;
+				if( !dbs_name[i].endsWith(".for")) continue;
 				
 				FortuneFile ff = new FortuneFile();
 				ff.packageName = pn;
