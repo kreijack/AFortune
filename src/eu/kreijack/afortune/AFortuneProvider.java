@@ -1,3 +1,22 @@
+/*
+    AFortune: show a fortune cookie
+
+    Copyright (C) 2011  Goffredo Baroncelli <kreijack@gmail.com>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 package eu.kreijack.afortune;
 
 import eu.kreijack.afortune.R;
@@ -9,6 +28,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.util.Log;
 import android.widget.RemoteViews;
 
 public class AFortuneProvider extends AppWidgetProvider {
@@ -43,31 +63,37 @@ public class AFortuneProvider extends AppWidgetProvider {
 	}
 
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+
+        Log.d(TAG,"onUpdate");    	
+    	updateAllWidgets(context);
+    	
+/*    	
         final int N = appWidgetIds.length;
-        //Log.d(TAG,"onUpdate");
+
         startAFortuneService(context);
 
         // Perform this loop procedure for each App Widget that belongs to this provider
         for (int i=0; i<N; i++) {
             int appWidgetId = appWidgetIds[i];
 
-            // Create an Intent to launch ExampleActivity
-            Intent intent = new Intent(context, AFortuneFortune.class);
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-
+            
             // Get the layout for the App Widget and attach an on-click listener to the button
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.afortune_layout);
             views.setTextViewText(R.id.textView1, fortuneMsg);
-            
+ 
+            // Create an Intent to launch ExampleActivity
+            Intent intent = new Intent(context, AFortuneFortune.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);            
             views.setOnClickPendingIntent(R.id.textView1, pendingIntent);
 
             // Tell the AppWidgetManager to perform an update on the current App Widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
+*/
     }
     
     public void onReceive(Context context, Intent intent){
-		//Log.d(TAG,"ReceivedIntent:"+intent.getAction());    	
+		Log.d(TAG,"ReceivedIntent:"+intent.getAction());    	
     	if(Const.UPDATE_FORTUNE.equals(intent.getAction())){
     		fortuneMsg = intent.getStringExtra("msg");
     		updateAllWidgets(context);
@@ -113,8 +139,12 @@ public class AFortuneProvider extends AppWidgetProvider {
         	views.setInt(R.id.textView1, "setTextColor",
         			Color.rgb(Color.red(fgcolor), Color.green(fgcolor), 
         			Color.blue(fgcolor)));
-            
-            
+
+            // Create an Intent to launch ExampleActivity
+            Intent intent = new Intent(context, AFortuneFortune.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);            
+            views.setOnClickPendingIntent(R.id.textView1, pendingIntent);       	
+        	
             // Tell the AppWidgetManager to perform an update on the current App Widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }      
