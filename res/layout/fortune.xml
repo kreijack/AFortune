@@ -5,11 +5,19 @@
   android:layout_height="match_parent" 
   android:orientation="vertical" android:id="@+id/linearLayout33">
 
-    <LinearLayout android:id="@+id/linearLayout1"
-    	android:orientation="horizontal"
-    	  
-    	android:layout_height="wrap_content"
-    	android:layout_width="match_parent">
+    <LinearLayout
+        android:id="@+id/layout30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btnCaptionMenu" />
+
     		    <Button android:layout_weight="1"  
 			    	android:layout_height="wrap_content" 
 			    	android:layout_width="wrap_content" 

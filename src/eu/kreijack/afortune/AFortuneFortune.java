@@ -28,6 +28,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.ClipboardManager;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -38,6 +39,7 @@ public class AFortuneFortune extends Activity {
 	private Button				btnNext;
 	private Button 				btnCopyAll;
 	private Button				btnShare;
+	private Button				btnMenu;
 	private Button				btnSendSMS;
 	private TextView			tvFortune;
 	private String				fortune;
@@ -97,7 +99,7 @@ public class AFortuneFortune extends Activity {
 		tvFortune.setText(fortune);
 	}
 	
-	private void onLongClick_(){
+	private void startConfig(){
 		startActivity(new Intent(this, AFortuneConfigure.class)); 
 	}
 	
@@ -118,11 +120,15 @@ public class AFortuneFortune extends Activity {
     	btnSendSMS.setOnClickListener(new Button.OnClickListener() { 
     		public void onClick (View v){ onSendSMS(); }
     	});
+    	btnMenu = (Button)findViewById(R.id.btnMenu);
+    	btnMenu.setOnClickListener(new Button.OnClickListener() { 
+    		public void onClick (View v){ startConfig(); }
+    	});
     	tvFortune = (TextView)findViewById(R.id.tvFortuneText);
     	tvFortune.setOnLongClickListener(new TextView.OnLongClickListener() { 
 			@Override
 			public boolean onLongClick(View arg0) {
-				onLongClick_();
+				startConfig();
 				return true;
 			}
     	});    	
@@ -164,4 +170,11 @@ public class AFortuneFortune extends Activity {
     	unregisterReceiver(eventReceiver);    
     }
     
+    public boolean onKeyDown(int keyCode, KeyEvent event) { 
+        if (keyCode == KeyEvent.KEYCODE_MENU) {
+        	startConfig();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event); 
+    }     
 }

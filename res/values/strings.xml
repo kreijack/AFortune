@@ -73,5 +73,6 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA.
 	<string name="btnCaptionShare">Email...</string>    
 	<string name="btnCopyAll">Copy</string>
 	<string name="txtSendTo">Send fortune...</string>
-	<string name="captionShareViaSMS">SMS..</string>                
+	<string name="captionShareViaSMS">SMS..</string>
+	<string name="btnCaptionMenu">...</string>                
 </resources>
