@@ -1,0 +1,84 @@
+This package was debianized by Marco d'Itri <md@debian.org>
+and is now maintained by Emanuele Rocca <ema@debian.org>
+
+fortunes-it is available on http://www.fortune-it.net/dx-download.html
+
+
+                          fortune-it COPYING-POLICY:
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   === ENGLISH ===
+
+This package does not contain software, program sources or any sort of
+executable binaries.
+
+However, we provide NO WARRANTY about whatever you may do using root or
+normal-user privileges during installation.  Follow instructions in
+INSTALLAZIONE file at your own risk (if you make something wrong, like
+removing an important file or corrupting any sort of information which is
+not correlated to fortune files, we are not responsible for that).
+
+We do not want anybody to be offended by the contents of these fortune files.
+You may choose not to install "-o" files.  If you feel some "not -o" fortune
+may be offensive or immoral, send us a feedback (to fortune-it@fortune-it.net)
+and remove fortune-it; we shall update the package following your suggestions.
+
+Contained files are not copyrighted, since they are a collection of
+quotations of which, almost entirely, we are not authors.  (That is, it's
+mainly a collection of other people works.)
+The name of every known author and source of the quotation are written at the
+bottom of the quotation itself.
+This is a non-professional and no-profit work.
+It is our intention not to violate any possible copyright.
+
+Consider this package freeware (public domain).
+You may do whatever you want with this package.
+You may freely copy, modify and redistribute fortune-it, but it would be a
+good idea to specify somewhere who you are and what kind of changes you have
+done (if you want to make any change), even if, actually, the best way to add
+quotations and jokes is sending them to fortune-it@fortune-it.net, isn't it?
+:-)
+
+If you want to include fortune-it in a commercial package, you may do it
+freely.  Contact current maintainers (see LSM file) if you need more info.
+
+
+   === ITALIANO ===
+
+Questo package non contiene software, sorgenti di programmi ne' alcun tipo di
+binari eseguibili.
+
+Tuttavia, noi NON FORNIAMO ALCUNA GARANZIA sugli effetti delle vostre azioni
+nell'esecuzione dell'installazione con i privilegi di root o di utente
+normale.
+Seguite le istruzioni nel file INSTALLAZIONE a vostro rischio e pericolo
+(se fate qualcosa di non voluto, come cancellare un file importante o
+corrompere ogni qualunque informazione non correlata ai file di fortune,
+non ritenete noi responsabili).
+
+Non desideriamo che alcuno venga offeso dal contenuto di questi file di
+fortune.  Potete scegliere di non installare i file "-o".  Se poi ritenete
+offensivo o immorale qualche fortune nei file "non -o", comunicatecelo
+(a fortune-it@fortune-it.net) e rimuovete fortune-it; noi aggiorneremo il
+package seguendo le vostre indicazioni.
+
+I file contenuti qui non sono stati registrati sotto copyright, dal momento
+che essi sono la raccolta di citazioni di cui, praticamente interamente, noi
+non siamo autori.  (Cioe', e' principalmente la raccolta del lavoro di altre
+persone.)
+Il nome di ogni autore e fonte conosciuti per la singola citazione sono
+scritti in calce alla citazione medesima.
+Questa e' un'opera amatoriale senza scopo di lucro.
+Non si intende violare alcun eventuale copyright.
+
+Considerate freeware (public domain) questo package.
+Ne potete fare quello che volete.
+Potete copiare, modificare e ridistribuire fortune-it liberamente e
+gratuitamente, ma sarebbe una buona idea specificare da qualche parte chi
+siete e che tipo di modifica avete fatto (se volete apportare modifiche),
+anche se in effetti il modo migliore per aggiungere citazioni e battute e'
+quello di spedirle a fortune-it@fortune-it.net, giusto?  :-)
+
+Se volete includere fortune-it in un pacchetto commerciale, siete liberi di
+farlo.  Contattate gli attuali manutentori (si veda il file LSM) se servono
+ulteriori informazioni.
